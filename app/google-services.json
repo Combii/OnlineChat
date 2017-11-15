@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "291868165475",
+    "firebase_url": "https://onlinechat-ecdaa.firebaseio.com",
+    "project_id": "onlinechat-ecdaa",
+    "storage_bucket": "onlinechat-ecdaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291868165475:android:52e0775e31c9ed5a",
+        "android_client_info": {
+          "package_name": "com.combii.onlinechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291868165475-8po68rut8no8184m538td7lmfk53fehu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.combii.onlinechat",
+            "certificate_hash": "5672177c824eab5f84d7021a8aff8b8f26225c05"
+          }
+        },
+        {
+          "client_id": "291868165475-odb35366o7jjvvmhthbugq723lchs657.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATsMyb2M9kzbee1rkG061_Tqfs3fRaEZE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "291868165475-odb35366o7jjvvmhthbugq723lchs657.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
