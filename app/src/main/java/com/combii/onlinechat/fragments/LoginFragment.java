@@ -1,5 +1,6 @@
 package com.combii.onlinechat.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -10,9 +11,11 @@ import android.widget.EditText;
 
 import com.combii.onlinechat.R;
 import com.combii.onlinechat.R2;
+import com.combii.onlinechat.activites.RegisterActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -45,6 +48,11 @@ public class LoginFragment extends BaseFragment {
         View rootView = inflater.inflate(R.layout.fragment_login, container, false);
         mUnbinder = ButterKnife.bind(this, rootView);
         return rootView;
+    }
+
+    @OnClick(R2.id.fragment_login_register_button)
+    public void setMRegisterButton(){
+        startActivity(new Intent(getActivity(), RegisterActivity.class));
     }
 
     @Override
