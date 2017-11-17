@@ -2,18 +2,25 @@ package com.combii.onlinechat.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.combii.onlinechat.R;
 import com.combii.onlinechat.R2;
+import com.combii.onlinechat.utils.Constants;
+
+import java.net.URISyntaxException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.socket.client.IO;
+import io.socket.client.Socket;
 
 
 public class RegisterFragment extends BaseFragment {
@@ -34,9 +41,22 @@ public class RegisterFragment extends BaseFragment {
     Button mLoginButton;
 
     private Unbinder mUnbinder;
+    private Socket mSocket;
 
     public static RegisterFragment newInstance() {
         return new RegisterFragment();
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        try {
+            mSocket = IO.socket(Constants.IP_LOCAL_HOST);
+        } catch (URISyntaxException e) {
+            Log.i(RegisterFragment.class.getSimpleName(), e.getMessage());
+            Toast.makeText(getActivity(), "Can't connect to the server", Toast.LENGTH_SHORT).show();
+        }
+        mSocket.connect();
     }
 
 
@@ -52,5 +72,11 @@ public class RegisterFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         mUnbinder.unbind();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mSocket.disconnect();
     }
 }
